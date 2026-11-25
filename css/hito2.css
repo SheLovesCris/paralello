@@ -1,0 +1,95 @@
+/* ==========================================================
+   HITO 2 · Estilos de los componentes nuevos que maneja JS
+   (menú hamburguesa, modal, errores de formulario, buscador)
+   ========================================================== */
+
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+body.sin-scroll{overflow:hidden}
+
+/* ---------- Header + menú hamburguesa ---------- */
+.header-actions{display:flex;align-items:center;gap:var(--s-2)}
+.menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:2.5rem;height:2.5rem;padding:0 .6rem;background:transparent;border:1px solid var(--c-ink);cursor:pointer}
+.menu-toggle span{display:block;height:2px;background:var(--c-ink);transition:transform .25s,opacity .2s}
+.menu-toggle[aria-expanded="true"]{background:var(--c-ink)}
+.menu-toggle[aria-expanded="true"] span{background:var(--c-lime)}
+/* las tres rayas se convierten en una X */
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* En móvil el menú está plegado y se despliega hacia abajo */
+.main-nav{flex-direction:column;align-items:stretch;gap:0;max-height:0;overflow:hidden;visibility:hidden;transition:max-height .3s ease,visibility .3s}
+.main-nav.abierto{max-height:20rem;visibility:visible}
+.main-nav a{padding:var(--s-3) 0;border-bottom:1px solid #d6d3c9;font-size:1rem;font-family:var(--f-display)}
+.main-nav a:first-child{border-top:1px solid var(--c-ink);margin-top:var(--s-2)}
+.main-nav a[aria-current="page"]{border-bottom-color:#d6d3c9;color:var(--c-orange)}
+.main-nav a[aria-current="page"]::before{content:"→ "}
+
+@media (min-width:48em){
+  .menu-toggle{display:none}
+  .main-nav{flex-direction:row;gap:var(--s-4);max-height:none;overflow:visible;visibility:visible}
+  .main-nav a{padding:var(--s-1) 0;border-bottom:2px solid transparent;font-family:var(--f-body);font-size:.75rem}
+  .main-nav a:first-child{border-top:0;margin-top:0}
+  .main-nav a[aria-current="page"]{border-color:var(--c-orange);color:inherit}
+  .main-nav a[aria-current="page"]::before{content:none}
+}
+
+/* ---------- Buscador del dashboard ---------- */
+.contador{font-size:.7rem;color:var(--c-muted);margin-top:.15rem}
+.search-btn[aria-expanded="true"]{background:var(--c-ink);color:var(--c-lime)}
+.panel-busqueda{position:relative;margin-bottom:var(--s-3)}
+.panel-busqueda input{width:100%;padding:.9rem 2.8rem .9rem 1rem;border:1px solid var(--c-ink);background:var(--c-paper-2);font-size:.95rem;outline:0}
+.panel-busqueda input:focus{box-shadow:0 0 0 3px var(--c-lime)}
+.panel-busqueda input::-webkit-search-cancel-button{display:none}
+.limpiar{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);width:2rem;height:2rem;border:0;background:transparent;cursor:pointer;font-size:.9rem}
+.sin-resultados{padding:var(--s-6) var(--s-3);text-align:center;border:1px dashed var(--c-ink)}
+.sin-resultados p{font-family:var(--f-display);font-size:1.2rem;text-transform:uppercase}
+.sin-resultados small{color:var(--c-muted)}
+
+/* ---------- Errores de formulario ---------- */
+.error-msg{font-size:.72rem;font-weight:700;color:#c23a0e;min-height:0}
+.error-msg:empty{display:none}
+.error-msg::before{content:"✕ ";}
+.field.invalido{border-bottom-color:#c23a0e;border-bottom-width:2px}
+.field.invalido label{color:#c23a0e}
+.field.valido{border-bottom-color:#5c7000}
+.field.valido label::after{content:" ✓";color:#5c7000}
+.error-form{padding:.8rem 1rem;margin-top:var(--s-3);background:#ffe3d8;border-left:4px solid var(--c-orange);font-size:.8rem;font-weight:700}
+
+/* Barra de seguridad de la contraseña */
+.fuerza{display:flex;align-items:center;gap:var(--s-2)}
+.fuerza-barra{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;flex:1;max-width:10rem}
+.fuerza-barra span{height:4px;background:#d6d3c9}
+.fuerza-barra[data-nivel="1"] span:nth-child(-n+1){background:#c23a0e}
+.fuerza-barra[data-nivel="2"] span:nth-child(-n+2){background:var(--c-orange)}
+.fuerza-barra[data-nivel="3"] span:nth-child(-n+3){background:#b5d10f}
+.fuerza-barra[data-nivel="4"] span{background:#5c7000}
+.fuerza small{font-size:.65rem;color:var(--c-muted)}
+
+/* Checkbox de términos */
+.field-check{border-bottom:0}
+.field-check label{display:flex;gap:.6rem;align-items:center;text-transform:none;letter-spacing:0;font-weight:500;font-size:.8rem;cursor:pointer}
+.field-check input{width:1.1rem;height:1.1rem;accent-color:var(--c-ink)}
+
+/* Subida de imágenes en Publicar */
+.field-img{border-bottom:0;padding-top:0}
+.field-img.invalido .dropzone{border-color:#c23a0e;border-style:solid;background:#fff3ee}
+.field-img.valido .dropzone{border-color:#5c7000;border-style:solid}
+.lista-imagenes{list-style:none;font-size:.7rem;color:var(--c-muted)}
+.lista-imagenes li::before{content:"▪ "}
+
+/* ---------- Modal ---------- */
+.modal-fondo{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:var(--s-3);background:rgba(26,26,22,.55);opacity:0;transition:opacity .2s}
+.modal-fondo.visible{opacity:1}
+.modal{width:100%;max-width:26rem;background:var(--c-paper);border:1px solid var(--c-ink);box-shadow:8px 8px 0 var(--c-ink);padding:var(--s-4);transform:translateY(12px);transition:transform .2s}
+.modal-fondo.visible .modal{transform:none}
+.modal h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.4rem;line-height:1.05;margin-bottom:var(--s-2)}
+.modal p{font-size:.9rem;color:var(--c-muted);margin-bottom:var(--s-4)}
+.modal-acciones{display:flex;gap:var(--s-2);justify-content:flex-end;flex-wrap:wrap}
+.btn-modal{padding:.75rem 1.1rem;border:1px solid var(--c-ink);background:transparent;cursor:pointer;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.btn-modal.principal{background:var(--c-ink);color:var(--c-paper)}
+.btn-modal.principal:hover{background:var(--c-orange);border-color:var(--c-orange);color:#fff}
+
+@media (prefers-reduced-motion:reduce){
+  .modal-fondo,.modal,.main-nav,.menu-toggle span{transition:none}
+}

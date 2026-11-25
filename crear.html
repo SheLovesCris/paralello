@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PARA//LELO · Publicar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/crear.css">
+  <link rel="stylesheet" href="css/hito2.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="PARA//LELO, inicio">PARA//LELO</a>
+      <nav class="main-nav" id="menu-principal" aria-label="Principal">
+        <a href="index.html">Explorar</a>
+        <a href="crear.html" aria-current="page">Publicar</a>
+        <a href="login.html">Mi cuenta</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="cart" aria-label="Carrito, 0 artículos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>0</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="publish-head container" aria-labelledby="t">
+      <p class="eyebrow">Seller mode / 002</p>
+      <h1 id="t" class="display">Publícalo inesperado.</h1>
+      <p class="muted">Convierte una pieza extraordinaria en el próximo objeto de deseo.</p>
+    </section>
+
+    <form id="form-crear" class="publish container" action="index.html" method="post" enctype="multipart/form-data" novalidate>
+      <div class="field field-img">
+        <label class="dropzone" for="imagenes">
+          <span class="plus" aria-hidden="true">+</span>
+          <strong>Añade imágenes</strong>
+          <small>JPG o PNG · Máx. 10 MB · Hasta 5</small>
+          <input id="imagenes" name="imagenes" type="file" accept="image/png,image/jpeg" multiple>
+        </label>
+        <ul class="lista-imagenes" id="lista-imagenes"></ul>
+      </div>
+
+      <div class="fields">
+        <div class="field"><label for="nombre">Nombre del objeto</label><input id="nombre" name="nombre" type="text" placeholder="Ej. Silla orbital 01"></div>
+        <div class="field"><label for="cat">Categoría</label>
+          <select id="cat" name="cat"><option value="">Elige una…</option><option value="objetos">Objetos</option><option value="calzado">Calzado</option><option value="audio">Audio</option><option value="wearables">Wearables</option></select>
+        </div>
+        <div class="field"><label for="desc">Descripción</label><textarea id="desc" name="desc" maxlength="240" placeholder="¿Qué hace único a tu objeto?"></textarea><span id="c" class="counter">0/240</span></div>
+        <div class="field-row">
+          <div class="field"><label for="precio">Precio (€)</label><input id="precio" name="precio" type="number" min="0" step="0.01" placeholder="0.00"></div>
+          <div class="field"><label for="stock">Stock inicial</label><input id="stock" name="stock" type="number" min="1" value="1"></div>
+        </div>
+        <div class="field"><label for="lanzamiento">Fecha de lanzamiento</label><input id="lanzamiento" name="lanzamiento" type="date"></div>
+        <button class="btn" type="submit"><span>Publicar objeto</span><span class="arrow" aria-hidden="true">→</span></button>
+        <p class="legal">Podrás editar los detalles después de publicar.</p>
+      </div>
+    </form>
+  </main>
+  <script src="js/mockData.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/formularios.js"></script>
+</body>
+</html>

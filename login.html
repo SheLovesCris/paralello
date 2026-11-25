@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PARA//LELO · Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/hito2.css">
+</head>
+<body>
+  <main class="auth">
+    <aside class="auth-art" aria-hidden="true">
+      <div class="sphere"></div>
+      <div class="top"><a href="index.html" class="logo" tabindex="-1">PARA//LELO</a><span>Market / 2025</span></div>
+      <div class="claim"><small>Objetos para</small><h2>Otra<br>realidad.</h2></div>
+      <div class="bottom"><span>Curado por humanos</span><span>Envíos globales ↗</span></div>
+    </aside>
+    <section class="auth-panel" aria-labelledby="t">
+      <div class="inner">
+        <p class="eyebrow">Acceso / 001</p>
+        <h1 id="t" class="display">Hola de nuevo.</h1>
+        <p class="lead">Entra para seguir explorando tu selección.</p>
+        <nav class="tabs" aria-label="Acceso">
+          <a href="registro.html">Crear cuenta</a>
+          <a href="login.html" aria-current="page">Iniciar sesión</a>
+        </nav>
+        <form id="form-login" action="index.html" method="post" novalidate>
+          <p class="error-form" role="alert" hidden></p>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="hola@ejemplo.com" autocomplete="email"></div>
+          <div class="field"><label for="pass">Contraseña</label><input id="pass" name="pass" type="password" placeholder="8+ caracteres" autocomplete="current-password"></div>
+          <button class="btn" type="submit"><span>Entrar al mercado</span><span class="arrow" aria-hidden="true">→</span></button>
+          <p class="legal">Usuario de prueba: alex@parallelo.com · Parallelo2025</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="js/mockData.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/formularios.js"></script>
+</body>
+</html>

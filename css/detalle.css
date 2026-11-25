@@ -1,0 +1,28 @@
+/* Ficha de producto */
+.detail{display:grid;grid-template-columns:1fr}
+.detail-media{position:relative;min-height:22rem;background:var(--c-ink)}
+.detail-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.back{position:absolute;top:var(--s-3);left:var(--s-3);z-index:1;display:inline-flex;gap:var(--s-2);align-items:center;padding:.7rem 1rem;background:var(--c-paper);border:1px solid var(--c-ink);font-size:.7rem;font-weight:700}
+.tag-n{position:absolute;right:var(--s-3);bottom:var(--s-3);z-index:1;background:var(--c-lime);padding:.5rem .7rem;font-size:.7rem;font-weight:700}
+.detail-info{padding:var(--s-4) var(--s-3) var(--s-5)}
+.detail-top{display:flex;justify-content:space-between;align-items:flex-start}
+.fav{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--c-ink);border-radius:50%;background:transparent;cursor:pointer}
+.fav[aria-pressed="true"]{background:var(--c-orange);border-color:var(--c-orange)}
+.detail-info h1{font-size:clamp(2.4rem,10vw,4.2rem);margin-block:var(--s-4) var(--s-3)}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--s-3);border-bottom:1px solid var(--c-ink)}
+.price-row strong{font-family:var(--f-display);font-size:1.6rem}
+.available{font-size:.7rem;font-weight:700;text-transform:uppercase;color:#5c7000}
+.available::before{content:"";display:inline-block;width:.45rem;height:.45rem;margin-right:.4rem;border-radius:50%;background:#5c7000}
+.desc{margin-block:var(--s-4);color:var(--c-muted);max-width:34rem}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--c-muted);margin-bottom:var(--s-4)}
+.specs div{padding:var(--s-2) var(--s-3);border-right:1px solid var(--c-muted)}
+.specs div:last-child{border-right:0}
+.specs dt{font-size:.6rem;text-transform:uppercase;color:var(--c-muted)}
+.specs dd{font-size:.7rem;font-weight:700}
+.secure{margin-top:var(--s-2);text-align:center;font-size:.65rem;color:var(--c-muted)}
+
+@media (min-width:56em){
+  .detail{grid-template-columns:1fr 1fr;min-height:calc(100vh - var(--header-h))}
+  .detail-media{min-height:auto}
+  .detail-info{padding:var(--s-5) 6%}
+}

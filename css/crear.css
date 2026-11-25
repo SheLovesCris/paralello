@@ -1,0 +1,17 @@
+/* Publicar objeto */
+.publish-head{padding-block:var(--s-5) var(--s-4);border-bottom:1px solid var(--c-ink)}
+.publish-head h1{font-size:clamp(2.4rem,11vw,6.5rem);margin-block:var(--s-2) var(--s-3)}
+.publish{display:grid;grid-template-columns:1fr;gap:var(--s-4);padding-block:var(--s-5)}
+.dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s-2);min-height:16rem;background:var(--c-paper-2);border:1px dashed var(--c-ink);text-align:center;cursor:pointer}
+.dropzone .plus{display:grid;place-items:center;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--c-ink);color:#fff;font-size:1.6rem}
+.dropzone strong{font-size:.9rem}
+.dropzone small{font-size:.65rem;color:var(--c-muted)}
+.dropzone input{position:absolute;width:1px;height:1px;opacity:0}
+.dropzone:focus-within{outline:3px solid var(--c-violet)}
+.counter{align-self:flex-end;font-size:.65rem;color:var(--c-muted)}
+.publish .btn{margin-top:var(--s-4)}
+
+@media (min-width:56em){
+  .publish{grid-template-columns:5fr 7fr;gap:var(--s-5);align-items:start}
+  .dropzone{min-height:30rem}
+}

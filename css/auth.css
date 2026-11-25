@@ -1,0 +1,26 @@
+/* Login / Registro */
+.auth{display:grid;grid-template-columns:1fr;min-height:100vh}
+.auth-art{position:relative;overflow:hidden;background:var(--c-ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:var(--s-3);min-height:16rem}
+.auth-art .top{display:flex;justify-content:space-between;align-items:center;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase}
+.auth-art .logo{color:#fff}
+.sphere{position:absolute;z-index:0;right:-15%;top:15%;width:min(75vw,34rem);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#a9a4ff 25%,var(--c-violet) 60%,#c2547f 82%,var(--c-orange) 100%)}
+.auth-art>*:not(.sphere){position:relative;z-index:1}
+.auth-art .claim small{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase}
+.auth-art .claim h2{font-size:clamp(2.2rem,9vw,4.5rem);font-weight:600;text-transform:uppercase;line-height:.95}
+.auth-art .bottom{display:none}
+.auth-panel{background:var(--c-paper);color:var(--c-ink);display:flex;flex-direction:column;justify-content:center;padding:var(--s-5) var(--s-3)}
+.auth-panel .inner{width:100%;max-width:32.5rem;margin-inline:auto}
+.auth-panel h1{font-size:clamp(2rem,8vw,3.2rem);margin-block:var(--s-2)}
+.auth-panel .lead{color:var(--c-muted);font-size:.85rem;max-width:22rem}
+.tabs{display:grid;grid-template-columns:1fr 1fr;margin-block:var(--s-4) var(--s-2);border-bottom:1px solid #b9b7ad}
+.tabs a{text-align:center;padding:var(--s-3) 0;font-size:.7rem;font-weight:700;color:var(--c-muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs a[aria-current="page"]{color:var(--c-ink);border-color:var(--c-ink)}
+.auth-panel .btn{margin-top:var(--s-4)}
+
+@media (min-width:64em){
+  .auth{grid-template-columns:57% 43%}
+  .auth-art{padding:var(--s-4) 1.8rem;min-height:100vh}
+  .sphere{left:14%;right:auto;top:8%;width:min(42vw,40rem)}
+  .auth-art .bottom{display:flex;justify-content:space-between;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase}
+  .auth-panel{padding:var(--s-5) 5%}
+}

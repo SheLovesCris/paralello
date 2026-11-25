@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PARA//LELO · Crear cuenta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/hito2.css">
+</head>
+<body>
+  <main class="auth">
+    <aside class="auth-art" aria-hidden="true">
+      <div class="sphere"></div>
+      <div class="top"><a href="index.html" class="logo" tabindex="-1">PARA//LELO</a><span>Market / 2025</span></div>
+      <div class="claim"><small>Objetos para</small><h2>Otra<br>realidad.</h2></div>
+      <div class="bottom"><span>Curado por humanos</span><span>Envíos globales ↗</span></div>
+    </aside>
+    <section class="auth-panel" aria-labelledby="t">
+      <div class="inner">
+        <p class="eyebrow">Acceso / 001</p>
+        <h1 id="t" class="display">Únete al lado raro.</h1>
+        <p class="lead">Crea tu cuenta para descubrir y publicar objetos extraordinarios.</p>
+        <nav class="tabs" aria-label="Acceso">
+          <a href="registro.html" aria-current="page">Crear cuenta</a>
+          <a href="login.html">Iniciar sesión</a>
+        </nav>
+        <form id="form-registro" action="index.html" method="post" novalidate>
+          <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" placeholder="Tu nombre y apellido" autocomplete="name"></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="hola@ejemplo.com" autocomplete="email"></div>
+          <div class="field-row">
+          <div class="field"><label for="tel">Teléfono (opcional)</label><input id="tel" name="tel" type="tel" placeholder="+34 600 000 000" autocomplete="tel"></div>
+          <div class="field"><label for="nacimiento">Fecha de nacimiento</label><input id="nacimiento" name="nacimiento" type="date" autocomplete="bday"></div>
+          </div>
+          <div class="field"><label for="pass">Contraseña</label><input id="pass" name="pass" type="password" placeholder="8+ caracteres, una mayúscula y un número" autocomplete="new-password" aria-describedby="fuerza-texto">
+            <div class="fuerza"><div class="fuerza-barra" id="fuerza" data-nivel="0"><span></span><span></span><span></span><span></span></div><small id="fuerza-texto" aria-live="polite"></small></div>
+          </div>
+          <div class="field"><label for="pass2">Repite la contraseña</label><input id="pass2" name="pass2" type="password" placeholder="Otra vez, por si acaso" autocomplete="new-password"></div>
+          <div class="field field-check"><label for="terminos"><input id="terminos" name="terminos" type="checkbox"> Acepto los Términos y la Política de privacidad</label></div>
+          <button class="btn" type="submit"><span>Crear mi cuenta</span><span class="arrow" aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="js/mockData.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/formularios.js"></script>
+</body>
+</html>

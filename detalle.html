@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PARA//LELO · Ficha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/detalle.css">
+  <link rel="stylesheet" href="css/hito2.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="PARA//LELO, inicio">PARA//LELO</a>
+      <nav class="main-nav" id="menu-principal" aria-label="Principal">
+        <a href="index.html" aria-current="page">Explorar</a>
+        <a href="crear.html">Publicar</a>
+        <a href="login.html">Mi cuenta</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="cart" aria-label="Carrito, 0 artículos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>0</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <article class="detail">
+      <figure class="detail-media">
+        <a href="index.html" class="back">‹ Volver</a>
+        <img id="detalle-img" src="img/monolamp04.jpg" alt="">
+        <figcaption class="tag-n" id="detalle-num"></figcaption>
+      </figure>
+      <div class="detail-info">
+        <div class="detail-top">
+          <p class="eyebrow muted" id="detalle-cat"></p>
+          <button class="fav" type="button" aria-pressed="false" aria-label="Guardar en favoritos">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-8-5.4-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.6-8 11-8 11z"/></svg>
+          </button>
+        </div>
+        <h1 class="display" id="detalle-nombre">Cargando…</h1>
+        <div class="price-row"><strong id="detalle-precio"></strong><span class="available" id="detalle-stock"></span></div>
+        <p class="desc" id="detalle-desc"></p>
+        <dl class="specs">
+          <div><dt>Envío</dt><dd>2–4 días</dd></div>
+          <div><dt>Edición</dt><dd>Limitada</dd></div>
+          <div><dt>Devolución</dt><dd>14 días</dd></div>
+        </dl>
+        <button class="btn" type="button" id="btn-comprar"><span>Añadir al carrito</span><span class="arrow" aria-hidden="true">→</span></button>
+        <p class="secure">✓ Pago seguro y protección al comprador</p>
+      </div>
+    </article>
+  </main>
+  <script src="js/mockData.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/detalle.js"></script>
+</body>
+</html>
